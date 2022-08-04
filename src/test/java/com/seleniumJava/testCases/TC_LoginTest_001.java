@@ -1,7 +1,8 @@
 package com.seleniumJava.testCases;
 
-import org.testng.annotations.Test;
+
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.seleniumJava.pageObjects.LoginPage;
 
@@ -10,7 +11,7 @@ public class TC_LoginTest_001 extends BaseClass {
 	@Test
 	public void loginTest() {
 		
-		String expectedTitle = "";
+		String expectedTitle = "Guru99 Bank Manager HomePage";
 		
 		driver.get(readConfig.getBaseUrl());
 		

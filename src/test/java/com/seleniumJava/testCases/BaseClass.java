@@ -19,6 +19,7 @@ public class BaseClass {
 	public String baseURL = readConfig.getBaseUrl();
 	public String userName = readConfig.getUserName();
 	public String password = readConfig.getPassword();
+
 	public static WebDriver driver;
 	
 	
@@ -26,12 +27,16 @@ public class BaseClass {
 	@BeforeClass
 	public void setup(String br) {
 		
-		if(br == "chrome") {
+		if(br.equals("chrome")) {
 			
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + readConfig.getChromeDriverPath());
+			System.setProperty("webdriver.chrome.driver",readConfig.getChromeDriverPath());
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 			
 			logger.info(" Chrome Broswer is launched");
+		}
+		else {
+			logger.error("Please pass the correct browser parameter");
 		}
 		
 	}
