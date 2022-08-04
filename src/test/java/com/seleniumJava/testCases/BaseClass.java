@@ -1,6 +1,5 @@
 package com.seleniumJava.testCases;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +35,7 @@ public class BaseClass {
 			logger.info(" Chrome Broswer is launched");
 		}
 		else {
-			logger.error("Please pass the correct browser parameter");
+			logger.error("Please pass the correct browser parameter: " + br);
 		}
 		
 	}
